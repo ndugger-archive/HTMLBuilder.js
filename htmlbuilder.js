@@ -5,30 +5,30 @@
 		builder();
 	};
 })(function(builder) {
-	function HTML(children, parent) {
-		if (typeof children === "object") {
-			parent && parent = document.createDocumentFragment();
-			!Array.isArray(children) && children = [children];
-			for (var i = 0, count = children.length; i < count; i++) {
-				if (children[i].tagName) {
-					var child = document.createElement(children[i].tagName);
-					delete children[i].tagName;
-					for (var prop in children[i]) {
+	function HTML(childNodes, parentNode) {
+		if (typeof childNodes === "object") {
+			if (!parentNode) parentNode = document.createDocumentFragment();
+			if (!Array.isArray(childNodes)) childNodes = [childNodes];
+			for (var i = 0, count = childNodes.length; i < count; i++) {
+				if (childNodes[i].tagName) {
+					var child = document.createElement(childNodes[i].tagName);
+					delete childNodes[i].tagName;
+					for (var prop in childNodes[i]) {
 						if (prop === "classList") {
-							child.classList.add(children[i][prop]);
+							child.classList.add(childNodes[i][prop]);
 						} else if (child.hasOwnProperty(prop) && prop !== "childNodes") {
-							child[prop] = children[i][prop];
+							child[prop] = childNodes[i][prop];
 						};
 					};
-					parent.appendChild(child);
+					parentNode.appendChild(child);
 				} else {
-					child = parent;
+					child = parentNode;
 				};
-				children[i].children && new HTML(children[i].childNodes, child);
+				if (childNodes[i].childNodes) new HTML(childNodes[i].childNodes, child);
 			};
-			return parent;
+			return parentNode;
 		} else {
-			var error = new TypeError((typeof children) + " is an invalid argument for children.");
+			var error = new TypeError((typeof childNodes) + " is an invalid argument for childNodes.");
 			console.error(error);
 		};
 	};
