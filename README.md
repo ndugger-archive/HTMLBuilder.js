@@ -10,7 +10,7 @@ Usage Example:
 		onclick: function() {
 			console.log("hello");
 		},
-		children: [
+		childNodes: [
 			{
 				tagName: "a",
 				href: "#",
