@@ -7,7 +7,7 @@ Usage Example:
 		id: "mySection",
 		classList: "foo-bar",
 		onclick: function() {
-			console.log("hello");
+			console.log("clicked");
 		},
 		childNodes: [
 			{
