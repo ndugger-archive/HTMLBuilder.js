@@ -1,6 +1,9 @@
 (function(HTMLBuilder) {
-	if (window.HTMLBuilder) console.error(new Error("Conflict: 'window.HTMLBuilder' already exists."));
-	else window.HTMLBuilder = HTMLBuilder;
+	if (window.HTMLBuilder) {
+		console.error(new Error("Conflict: 'window.HTMLBuilder' already exists."));
+	} else { 
+		window.HTMLBuilder = HTMLBuilder;
+	};
 })(function(childNodes, parentNode) {
 	if (typeof childNodes === "object") {
 		if (!parentNode) parentNode = document.createDocumentFragment();
@@ -11,8 +14,11 @@
 				delete childNodes[i].tagName;
 				delete childNodes[i].nodeName;
 				for (var prop in childNodes[i]) {
-					if (prop === "classList") child.classList.add(childNodes[i][prop]);
-					else if (child.hasOwnProperty(prop) && prop !== "childNodes") child[prop] = childNodes[i][prop];
+					if (prop === "classList") {
+						child.classList.add(childNodes[i][prop]);
+					} else if (child.hasOwnProperty(prop) && prop !== "childNodes") {
+						child[prop] = childNodes[i][prop];
+					}
 				};
 				parentNode.appendChild(child);
 			} else {
