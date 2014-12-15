@@ -16,8 +16,8 @@
 						} else if (child.hasOwnProperty(prop) && prop !== "childNodes") {
 							child[prop] = childNodes[i][prop];
 						};
-						parentNode.appendChild(child);
 					};
+					parentNode.appendChild(child);
 				} else {
 					parentNode.appendChild(document.createTextNode(childNodes[i].textContent));
 					child = parentNode;
