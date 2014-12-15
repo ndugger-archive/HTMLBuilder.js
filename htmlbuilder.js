@@ -1,9 +1,6 @@
 (function(builder) {
-	if (window.HTML) {
-		console.error("Conflict: 'window.HTML' already exists.")
-	} else {
-		builder();
-	};
+	if (window.HTML) console.error("Conflict: 'window.HTML' already exists.")
+	else builder();
 })(function(builder) {
 	function HTML(childNodes, parentNode) {
 		if (typeof childNodes === "object") {
