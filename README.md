@@ -2,6 +2,7 @@ html-builder
 ============
 
 Usage Example:
+
 	document.body.appendChild(new HTML({
 		tagName: "section",
 		id: "mySection",
