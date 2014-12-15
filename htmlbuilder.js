@@ -18,7 +18,7 @@
 						};
 					};
 				} else {
-					child = document.createTextNode(childNodes[i].textContent);
+					var child = document.createTextNode(childNodes[i].textContent);
 				};
 				parentNode.appendChild(child);
 				if (childNodes[i].childNodes) new HTML(childNodes[i].childNodes, child);
