@@ -2,7 +2,7 @@ HTMLBuilder
 ============
 Usage Example:
 
-	var foo = new HTMLBuilder({
+	var foo = HTMLBuilder({
 		tagName: "section",
 		id: "mySection",
 		classList: "foo-bar",
