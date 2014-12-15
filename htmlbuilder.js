@@ -2,7 +2,7 @@
 	if (window.HTML) console.error("Conflict: 'window.HTML' already exists.")
 	else builder();
 })(function(builder) {
-	function HTML(childNodes, parentNode) {
+	function HTMLBuilder(childNodes, parentNode) {
 		if (typeof childNodes === "object") {
 			if (!parentNode) parentNode = document.createDocumentFragment();
 			if (!Array.isArray(childNodes)) childNodes = [childNodes];
@@ -21,12 +21,12 @@
 					var child = document.createTextNode(childNodes[i].textContent);
 				};
 				parentNode.appendChild(child);
-				if (childNodes[i].childNodes) new HTML(childNodes[i].childNodes, child);
+				if (childNodes[i].childNodes) new HTMLBuilder(childNodes[i].childNodes, child);
 			};
 			return parentNode;
 		} else {
 			console.error(new TypeError((typeof childNodes) + " is an invalid argument for childNodes."));
 		};
 	};
-	window.HTML = HTML;
+	window.HTMLBuilder = HTMLBuilder;
 });
