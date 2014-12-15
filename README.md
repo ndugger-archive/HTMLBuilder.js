@@ -19,7 +19,10 @@ Usage Example:
 			},
 			{
 				tagName: "p",
-				textContent: "Hello World"
+				textContent: "Hello World.",
+				childNodes: {
+					textContent: " I'm a textNode!"
+				}
 			}
 		]
 	});
