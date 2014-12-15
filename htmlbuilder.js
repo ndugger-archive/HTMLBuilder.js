@@ -7,12 +7,8 @@
 })(function(builder) {
 	function HTML(children, parent) {
 		if (typeof children === "object") {
-			if (!parent) {
-				parent = document.createDocumentFragment();
-			};
-			if (!Array.isArray(children)) {
-				children = [children];
-			};
+			parent && parent = document.createDocumentFragment();
+			!Array.isArray(children) && children = [children];
 			for (var i = 0, count = children.length; i < count; i++) {
 				if (children[i].tagName) {
 					var child = document.createElement(children[i].tagName);
@@ -20,7 +16,7 @@
 					for (var prop in children[i]) {
 						if (prop === "classList") {
 							child.classList.add(children[i][prop]);
-						} else if (child.hasOwnProperty(prop) && prop !== "children") {
+						} else if (child.hasOwnProperty(prop) && prop !== "childNodes") {
 							child[prop] = children[i][prop];
 						};
 					};
@@ -28,9 +24,7 @@
 				} else {
 					child = parent;
 				};
-				if (children[i].children) {
-					new HTML(children[i].children, child);
-				};
+				children[i].children && new HTML(children[i].childNodes, child);
 			};
 			return parent;
 		} else {
