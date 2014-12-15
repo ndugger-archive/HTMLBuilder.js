@@ -17,7 +17,7 @@
 						child.classList.add(childNodes[i][prop]);
 					} else if (child.hasOwnProperty(prop) && prop !== "childNodes") {
 						child[prop] = childNodes[i][prop];
-					}
+					};
 				};
 				parentNode.appendChild(child);
 			} else {
