@@ -7,9 +7,9 @@
 			if (!parentNode) parentNode = document.createDocumentFragment();
 			if (!Array.isArray(childNodes)) childNodes = [childNodes];
 			for (var i = 0, count = childNodes.length; i < count; i++) {
-				if (childNodes[i].tagName) {
-					var child = document.createElement(childNodes[i].tagName);
-					delete childNodes[i].tagName;
+				if (childNodes[i].tagName || childNodes[i].nodeName) {
+					var child = document.createElement(childNodes[i].tagName || childNodes[i].nodeName);
+					delete childNodes[i].tagName || childNodes[i].nodeName;
 					for (var prop in childNodes[i]) {
 						if (prop === "classList") {
 							child.classList.add(childNodes[i][prop]);
