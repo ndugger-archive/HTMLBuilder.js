@@ -28,4 +28,4 @@ Usage Example:
 	});
 	document.body.appendChild(foo);
 
-It uses the properties of HTMLElements, with a special case for classList (to make it work without classList.add())
+It uses the properties of HTMLElements, with a special case for classList (to make it work without classList.add()). Both 'tagName' and 'nodeName' are supported for creating the tag.
