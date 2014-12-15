@@ -1,8 +1,8 @@
-html-builder
+HTMLBuilder
 ============
 Usage Example:
 
-	var foo = new HTML({
+	var foo = new HTMLBuilder({
 		tagName: "section",
 		id: "mySection",
 		classList: "foo-bar",
