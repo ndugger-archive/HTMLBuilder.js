@@ -11,8 +11,7 @@
 		for (var i = 0, count = childNodes.length; i < count; i++) {
 			if (childNodes[i].tagName || childNodes[i].nodeName) {
 				var child = document.createElement(childNodes[i].tagName || childNodes[i].nodeName);
-				delete childNodes[i].tagName;
-				delete childNodes[i].nodeName;
+				delete childNodes[i].tagName && delete childNodes[i].nodeName;
 				for (var prop in childNodes[i]) {
 					if (prop === "classList") {
 						child.classList.add(childNodes[i][prop]);
