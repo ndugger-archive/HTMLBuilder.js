@@ -1,7 +1,7 @@
-(function(builder) {
-	if (window.HTML) console.error("Conflict: 'window.HTML' already exists.")
-	else builder();
-})(function(builder) {
+(function(HTMLBuilder) {
+	if (window.HTMLBuilder) console.error("Conflict: 'window.HTMLBuilder' already exists.")
+	else HTMLBuilder();
+})(function() {
 	function HTMLBuilder(childNodes, parentNode) {
 		if (typeof childNodes === "object") {
 			if (!parentNode) parentNode = document.createDocumentFragment();
@@ -21,7 +21,7 @@
 					var child = document.createTextNode(childNodes[i].textContent);
 				};
 				parentNode.appendChild(child);
-				if (childNodes[i].childNodes) new HTMLBuilder(childNodes[i].childNodes, child);
+				if (childNodes[i].childNodes) HTMLBuilder(childNodes[i].childNodes, child);
 			};
 			return parentNode;
 		} else {
