@@ -3,7 +3,7 @@ html-builder
 
 Usage Example:
 
-	document.body.appendChild(new HTML({
+	var foo = new HTML({
 		tagName: "section",
 		id: "mySection",
 		classList: "foo-bar",
@@ -22,6 +22,7 @@ Usage Example:
 				textContent: "Hello World"
 			}
 		]
-	}));
+	});
+	document.body.appendChild(foo);
 
 It uses the properties of HTMLElements, with a special case for classList (to make it work without classList.add())
