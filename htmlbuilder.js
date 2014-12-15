@@ -16,11 +16,13 @@
 						} else if (child.hasOwnProperty(prop) && prop !== "childNodes") {
 							child[prop] = childNodes[i][prop];
 						};
+						parentNode.appendChild(child);
 					};
 				} else {
 					var child = document.createTextNode(childNodes[i].textContent);
+					parentNode.appendChild(child);
+					child = parentNode;
 				};
-				parentNode.appendChild(child);
 				if (childNodes[i].childNodes) HTMLBuilder(childNodes[i].childNodes, child);
 			};
 			return parentNode;
