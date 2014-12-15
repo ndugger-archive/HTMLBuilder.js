@@ -23,6 +23,6 @@
 		};
 		return parentNode;
 	} else {
-		console.error(new TypeError((typeof childNodes) + " is an invalid argument for childNodes."));
+		console.error(new TypeError((typeof childNodes) + " is an invalid argument."));
 	};
 });
