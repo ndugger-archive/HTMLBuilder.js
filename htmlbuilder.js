@@ -17,7 +17,7 @@
 					parentNode.appendChild(child);
 				} else {
 					parentNode.appendChild(document.createTextNode(childNodes[i].textContent));
-					child = parentNode;
+					var child = parentNode;
 				};
 				if (childNodes[i].childNodes) HTMLBuilder(childNodes[i].childNodes, child);
 			};
