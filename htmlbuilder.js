@@ -1,5 +1,5 @@
 (function(HTMLBuilder) {
-	if (window.HTMLBuilder) console.error("Conflict: 'window.HTMLBuilder' already exists.");
+	if (window.HTMLBuilder) console.error(new Error("Conflict: 'window.HTMLBuilder' already exists."));
 	else window.HTMLBuilder = HTMLBuilder;
 })(function(childNodes, parentNode) {
 	if (typeof childNodes === "object") {
