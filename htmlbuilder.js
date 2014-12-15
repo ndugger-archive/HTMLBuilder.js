@@ -17,10 +17,10 @@
 							child[prop] = childNodes[i][prop];
 						};
 					};
-					parentNode.appendChild(child);
 				} else {
-					child = parentNode;
+					child = document.createTextNode(childNodes[i].textContent);
 				};
+				parentNode.appendChild(child);
 				if (childNodes[i].childNodes) new HTML(childNodes[i].childNodes, child);
 			};
 			return parentNode;
