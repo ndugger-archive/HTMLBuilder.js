@@ -15,7 +15,7 @@
 				for (var prop in childNodes[i]) {
 					if (prop === "classList") {
 						child.classList.add(childNodes[i][prop]);
-					} else if (child.hasOwnProperty(prop) && prop !== "childNodes") {
+					} else if (child.hasOwnProperty(prop) && prop !== "childNodes" && prop !== "children") {
 						child[prop] = childNodes[i][prop];
 					};
 				};
@@ -24,7 +24,7 @@
 				parentNode.appendChild(document.createTextNode(childNodes[i].textContent));
 				var child = parentNode;
 			};
-			if (childNodes[i].childNodes) HTMLBuilder(childNodes[i].childNodes, child);
+			if (childNodes[i].childNodes || childNodes[i].children) HTMLBuilder(childNodes[i].childNodes || childNodes[i].children, child);
 		};
 		return parentNode;
 	} else {
