@@ -1,5 +1,5 @@
-HTMLBuilder
-============
+HTMLBuilder.js
+==============
 Usage Example:
 
 	var foo = HTMLBuilder({
