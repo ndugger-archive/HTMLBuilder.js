@@ -1,6 +1,8 @@
 HTMLBuilder.js
 ==============
-(Released under MIT License) **Usage Example:**
+(Released under MIT License)
+
+**Usage Example:**
 
 	var foo = HTMLBuilder({
 		tagName: "section",
