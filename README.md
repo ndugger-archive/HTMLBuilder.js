@@ -31,4 +31,4 @@ HTMLBuilder.js
 
 It uses the properties of HTMLElements, with a special case for **classList** (to make it work without classList.add()). 
 
-Both **tagName** and **nodeName** are supported for creating the tag.
+Both **tagName** and **nodeName** are supported for creating the tag, and both **children** and **childNodes** are supported for the children elements.
